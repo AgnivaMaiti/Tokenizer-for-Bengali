@@ -1,36 +1,35 @@
 
-# Text Tokenizer
+# Bangla Tokenizer
 
-A simple Python script that breaks a given text into smaller tokens for further processing.
+A simple Bangla text tokenizer that breaks a given Bangla sentence into smaller tokens for further processing. It removes unnecessary punctuation, preserves Bangla and English words, and ensures proper tokenization of mixed-language text.
 
 ## Features
-- Splits text into individual words.
-- Retains only lowercase English letters and digits as tokens.
-- Replaces specific non-English punctuation (`।`) with spaces.
+- Supports Bangla and English words.
+- Removes punctuation except for necessary word characters.
+- Replaces Bangla sentence-ending punctuation (`।`) with a space.
+- Works well for both Bangla and mixed Bangla-English text.
+
+## Installation
+No external dependencies are required. This script runs with Python 3.x.
 
 ## Usage
+Run the script and input your text:
 
-### Prerequisites
-- Install Python 3.x
+```sh
+python tokenizer.py
+```
 
-### Running the Script
-1. Clone or download the script.
-2. Run it using:
-   ```sh
-   python tokenizer.py
-   ```
-3. Enter your text when prompted.
-4. The script outputs the tokenized list.
+Then, enter a Bangla sentence when prompted.
 
-## Example
-**Input:**
+### Example
+#### **Input:**
 ```
-এখানে আপনার পাঠ্য লিখুন: Hello, this is a test. বাংলা । example123।
+আমার নাম রাহুল। আমি Python শিখছি!
 ```
-**Output:**
+#### **Output:**
 ```
-['Hello,', 'this', 'is', 'a', 'test.', 'বাংলা', 'example123']
+টোকেন: ['আমার', 'নাম', 'রাহুল', 'আমি', 'Python', 'শিখছি']
 ```
 
 ## License
-MIT License.
+This project is open-source and available for modification and improvement.
