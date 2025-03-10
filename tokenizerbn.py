@@ -1,18 +1,15 @@
-import string
+import re
 
 def tokenize(text):
-  tokens = []
-  for word in text.split():
-    if all(c in string.ascii_lowercase or c.isdigit() for c in word):
-      tokens.append(word)
-    else:
-      tokens.append(word.replace("।", " ").strip())
-  return tokens
+    text = text.replace("।", " ")
+    text = re.sub(r"[^\w\s\u0980-\u09FF]", "", text)
+    tokens = text.split()
+    return tokens
 
 def main():
-  text = input("এখানে আপনার পাঠ্য লিখুন: ")
-  tokens = tokenize(text)
-  print(tokens)
+    text = input("এখানে আপনার পাঠ্য লিখুন: ")
+    tokens = tokenize(text)
+    print("টোকেন:", tokens)
 
 if __name__ == "__main__":
-  main()
+    main()
